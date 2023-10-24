@@ -89,3 +89,11 @@ const scratchAll = ()=>{
 | scratchStart | 开始刮卡时 | 手指触控或鼠标按下       |
 | scratchEnd   | 刮卡结束时 | 手指离开或鼠标点击抬起时 |
 | scratchAll   | 刮光全部时 | 刮刮卡被刮完时触发       |
+
+#### methods
+
+通过 ref 可以获取到 Swipe 实例并调用实例方法
+
+| 方法名         | 说明       | 备注                     |
+| ------------ | ---------- | ------------------------ |
+| reset | 重置刮刮乐 | stratchCardRef.value?.reset()       |

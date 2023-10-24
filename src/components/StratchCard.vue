@@ -197,6 +197,15 @@ const drawArc = (e: MouseEvent | TouchEvent) => {
   ctx.value.fill();
 }
 
+//重置刮刮乐
+const reset = () => {
+  width.value = 0;
+  height.value = 0;
+  nextTick(() => {
+    init();
+  })
+}
+
 // 计算区域
 const calcArea = () => {
   if (!canvas.value || !ctx.value) {
@@ -220,6 +229,7 @@ const onResize = () => {
   ctx.value = null;
   init();
 }
+
 onMounted(() => {
   init();
   window.addEventListener("resize", onResize);
@@ -227,6 +237,10 @@ onMounted(() => {
 onUnmounted(() => {
   window.removeEventListener("resize", onResize);
 })
+defineExpose({
+  reset
+})
+
 </script>
 
 <template>
